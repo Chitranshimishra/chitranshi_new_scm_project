@@ -401,4 +401,33 @@ while(year>0||year<10000);
 }
 cout<<"\nMonth: ";
 cin>>month;
-
+if(month<=0||month>12)
+{
+do
+{
+cout<<"\nInvalid input for month !"<<"";
+cout<<"\nAgain enter the month: "<<"";
+cin>>month;
+}
+while(month>0||month<=12);
+}
+cout<<"\nDate: ";
+switch(month)
+{
+case 1:
+case 3:
+case 5:
+case 7:
+case 8:
+case 10:
+case 12:
+{
+cin>>date;
+while(date<1||date>31)
+{
+cout<<"\nInvalid date !"<<"";
+cout<<"\nAgain enter the date: "<<"";
+cin>>date;
+}
+break;
+}
