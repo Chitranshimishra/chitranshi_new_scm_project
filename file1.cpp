@@ -312,3 +312,122 @@ if(count!=0)
 {
 clreol();
 }
+cin>>DOB11[temp].month;
+}
+while(DOB11[temp].month<0||DOB11[temp].month>12);
+}
+cout<<"\nDate: ";
+clreol();
+switch(DOB11[temp].month)
+{
+case 1:
+case 3:
+case 5:
+case 7:
+case 8:
+case 10:
+case 12:
+{
+cin>>DOB11[temp].date;
+while(DOB11[temp].date<1||DOB11[temp].date>31)
+{
+clreol();
+cout<<"\nInvalid date !"<<"";
+cout<<"\nAgain enter the date: "<<"";
+clreol();
+cin>>DOB11[temp].date;
+}
+break;
+}
+case 2:
+{
+cin>>DOB11[temp].date;
+if(DOB11[temp].year%4==0)
+{
+while(DOB11[temp].date<0||DOB11[temp].date>29)
+//for leap year
+{
+clreol();
+cout<<"\nInvalid date !"<<"";
+cout<<"\nAgain enter the date: "<<"";
+clreol();
+cin>>DOB11[temp].date;
+}
+}
+else
+{
+while(DOB11[temp].date<0||DOB11[temp].date>28)
+//for non-leap year
+{
+clreol();
+cout<<"\nInvalid date !"<<"";
+cout<<"\nAgain enter the date: "<<"";
+clreol();
+cin>>DOB11[temp].date;
+}
+}
+break;
+}
+default:
+{
+cin>>DOB11[temp].date;
+while(DOB11[temp].date<1||DOB11[temp].date>30)
+{
+clreol();
+cout<<"\nInvalid date !"<<"";
+cout<<"\nAgain enter the date: "<<"";
+clreol();
+cin>>DOB11[temp].date;
+}
+break;
+}
+} //end of switch
+clreol();
+}
+void date::enter_date()
+{
+cout<<"\n First of all I need the current date ..."<<"";
+cout<<"\nYear :";
+cin>>year;
+if(year<=0||year>10000)
+{
+do
+{
+cout<<"\nInvalid input for year !"<<"";
+cout<<"\nPlease enter the year correctly: "<<"";
+cin>>year;
+}
+while(year>0||year<10000);
+}
+cout<<"\nMonth: ";
+cin>>month;
+if(month<=0||month>12)
+{
+do
+{
+cout<<"\nInvalid input for month !"<<"";
+cout<<"\nAgain enter the month: "<<"";
+cin>>month;
+}
+while(month>0||month<=12);
+}
+cout<<"\nDate: ";
+switch(month)
+{
+case 1:
+case 3:
+case 5:
+case 7:
+case 8:
+case 10:
+case 12:
+{
+cin>>date;
+while(date<1||date>31)
+{
+cout<<"\nInvalid date !"<<"";
+cout<<"\nAgain enter the date: "<<"";
+cin>>date;
+}
+break;
+}
