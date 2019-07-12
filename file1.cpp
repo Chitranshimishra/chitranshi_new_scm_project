@@ -339,3 +339,36 @@ cin>>DOB11[temp].date;
 }
 break;
 }
+case 2:
+{
+cin>>DOB11[temp].date;
+if(DOB11[temp].year%4==0)
+{
+while(DOB11[temp].date<0||DOB11[temp].date>29)
+//for leap year
+{
+clreol();
+cout<<"\nInvalid date !"<<"";
+cout<<"\nAgain enter the date: "<<"";
+clreol();
+cin>>DOB11[temp].date;
+}
+}
+else
+{
+while(DOB11[temp].date<0||DOB11[temp].date>28)
+//for non-leap year
+{
+clreol();
+cout<<"\nInvalid date !"<<"";
+cout<<"\nAgain enter the date: "<<"";
+clreol();
+cin>>DOB11[temp].date;
+}
+}
+break;
+}
+default:
+{
+cin>>DOB11[temp].date;
+
