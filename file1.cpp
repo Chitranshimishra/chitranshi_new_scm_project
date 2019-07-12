@@ -312,3 +312,30 @@ if(count!=0)
 {
 clreol();
 }
+cin>>DOB11[temp].month;
+}
+while(DOB11[temp].month<0||DOB11[temp].month>12);
+}
+cout<<"\nDate: ";
+clreol();
+switch(DOB11[temp].month)
+{
+case 1:
+case 3:
+case 5:
+case 7:
+case 8:
+case 10:
+case 12:
+{
+cin>>DOB11[temp].date;
+while(DOB11[temp].date<1||DOB11[temp].date>31)
+{
+clreol();
+cout<<"\nInvalid date !"<<"";
+cout<<"\nAgain enter the date: "<<"";
+clreol();
+cin>>DOB11[temp].date;
+}
+break;
+}
